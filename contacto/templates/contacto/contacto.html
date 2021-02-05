@@ -1,0 +1,34 @@
+<!--Heredar de la plantilla base-->
+{% extends 'core/base.html' %}
+
+<!--Llenar el bloque cabecera-->
+{% block cabecera %} Contacto {% endblock %}
+
+<!--Llenar el bloque pie-->
+{% block pie %}
+<form action="" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="nameInput">Nombre *</label>
+    <div class="input-group" id="nameInput">{{formulario.name}}</div>
+    {{formulario.name.errors}}
+  </div>
+  <div class="form-group">
+    <label for="emailInput">Email address *</label>
+    <div class="input-group" id="emailInput">{{formulario.email}}</div>
+    {{formulario.email.errors}}
+  </div>
+  <div class="form-group">
+    <label for="contentInput">Contenido *</label>
+    <div class="input-group" id="contentInput">{{formulario.content}}</div>
+    {{formulario.content.errors}}
+  </div>
+  <div class="form-group">
+    <input
+      type="submit"
+      value="Enviar"
+      class="btn btn-primary btn-block py-2"
+    />
+  </div>
+</form>
+{% endblock %}

@@ -1,0 +1,28 @@
+<!--Heredar de la plantilla base-->
+{% extends 'core/base.html' %}
+
+<!--Llenar el bloque cabecera-->
+{% block cabecera %} Catalogo {% endblock %}
+
+<!--Llenar el bloque pie-->
+{% block pie %} {% for proyecto in projects %}
+
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{proyecto.title}}</h5>
+    <p class="card-text">{{proyecto.description}}</p>
+    <p class="card-text">
+      <small class="text-muted">{{proyecto.created}}</small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">{{proyecto.updated}}</small>
+    </p>
+  </div>
+  <img
+    src="{{proyecto.image.url}}"
+    class="mx-auto d-block"
+    alt="{{proyecto.title}}"
+    style="width: 100px; height: 100px; margin-bottom: 10px"
+  />
+</div>
+{% endfor %} {% endblock %}

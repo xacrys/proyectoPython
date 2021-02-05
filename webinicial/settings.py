@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "portafolio",
+    "portafolio.apps.PortafolioConfig",
+    "blog",
+    "contacto",
+    "pages",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -114,3 +118,40 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = "/core/static/"
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+EMAIL_HOST = "smtp.mailtrap.io"
+EMAIL_HOST_USER = "ace781c991c2c4"
+EMAIL_HOST_PASSWORD = "dbe456b32df7db"
+EMAIL_PORT = "2525"
+
+
+CKEDITOR_CONFIGS = {
+    "default": {"toolbar": "full", "height": 300, "width": 800,},
+}
+
+# CKEDITOR_CONFIGS = {
+#     "default": {
+#         "toolbar": "Custom",
+#         "toolbar_Custom": [
+#             ["Bold", "Italic", "Underline"],
+#             [
+#                 "NumberedList",
+#                 "BulletedList",
+#                 "-",
+#                 "Outdent",
+#                 "Indent",
+#                 "-",
+#                 "JustifyLeft",
+#                 "JustifyCenter",
+#                 "JustifyRight",
+#                 "JustifyBlock",
+#             ],
+#             ["Link", "Unlink"],
+#             ["RemoveFormat", "Source"],
+#         ],
+#     }
+# }

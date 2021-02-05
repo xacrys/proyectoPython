@@ -73,6 +73,20 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="{% url 'portafolio' %}"
+                >Proyectos</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                href="{% url 'blog' %}"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                 href="{% url 'contacto' %}"
                 >Contacto</a
               >
@@ -80,8 +94,8 @@
             <li class="nav-item mx-0 mx-lg-1">
               <a
                 class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                href="{% url 'catalogo' %}"
-                >Catálogo</a
+                href="{% url 'pages:pages' %}"
+                >Páginas</a
               >
             </li>
           </ul>
@@ -110,7 +124,7 @@
 
         <!-- Icon Divider -->
 
-        <div class="container text-center" style="margin-top: 20px">
+        <div class="container" style="margin-top: 20px">
           {%block pie %}{%endblock %}
         </div>
 

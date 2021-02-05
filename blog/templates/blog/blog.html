@@ -1,0 +1,33 @@
+<!--Heredar de la plantilla base-->
+{% extends 'core/base.html' %}
+
+<!--Llenar el bloque cabecera-->
+{% block cabecera %} Blog {% endblock %}
+
+<!--Llenar el bloque pie-->
+{% block pie %} {% for entrada in listaEntradas %}
+
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{entrada.title}}</h5>
+    <p class="card-text">{{entrada.content}}</p>
+    <p class="card-text">
+      <small class="text-muted"
+        >{{entrada.published |date:"SHORT_DATE_FORMAT"}}</small
+      >
+    </p>
+    <p class="card-text">
+      <small class="text-muted">{{numeroInicial}}</small>
+    </p>
+    <p class="card-text">
+      <small class="text-muted">{{entrada.categories.all|join:"| "}}</small>
+    </p>
+  </div>
+  <img
+    src="{{entrada.image.url}}"
+    class="mx-auto d-block"
+    alt="{{entrada.title}}"
+    style="width: 100px; height: 100px; margin-bottom: 10px"
+  />
+</div>
+{% endfor %} {% endblock %}
