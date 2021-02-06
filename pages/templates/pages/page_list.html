@@ -5,7 +5,8 @@
 {% block cabecera %} Contacto {% endblock %}
 
 <!--Llenar el bloque pie-->
-{% block pie %}
+{% block pie %} {% include 'pages/page_menu.html'%}
+
 <main role="main">
   <div class="container mb-4">
     {% for page in object_list %}
@@ -19,6 +20,8 @@
             <a href="{% url 'pages:page' page.id page.title|slugify %}"
               >Leer más</a
             >
+            <a href="{% url 'pages:update' page.id %}">Editar</a>
+            <a href="{% url 'pages:delete' page.id %}">Borrar</a>
           </p>
         </div>
       </div>
